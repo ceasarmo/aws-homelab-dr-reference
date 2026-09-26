@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily due check for npm backups (UTC)
+
+[Timer]
+OnCalendar=*-*-* 03:10:00 UTC
+Persistent=true
+AccuracySec=1min
+Unit=homelab-backup-npm.service
+
+[Install]
+WantedBy=timers.target

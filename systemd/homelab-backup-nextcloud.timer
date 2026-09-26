@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily due check for nextcloud backups (UTC)
+
+[Timer]
+OnCalendar=*-*-* 03:00:00 UTC
+Persistent=true
+AccuracySec=1min
+Unit=homelab-backup-nextcloud.service
+
+[Install]
+WantedBy=timers.target

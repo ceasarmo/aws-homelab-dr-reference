@@ -1,0 +1,13 @@
+[Unit]
+Description=Local npm backup when due
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+ExecStart=/usr/bin/python3 /opt/aws-homelab-dr/scripts/schedule/run.py npm
+TimeoutStartSec=infinity
+StandardOutput=journal
+StandardError=journal

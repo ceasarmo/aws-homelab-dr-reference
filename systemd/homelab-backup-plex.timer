@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily due check for plex backups (UTC)
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 UTC
+Persistent=true
+AccuracySec=1min
+Unit=homelab-backup-plex.service
+
+[Install]
+WantedBy=timers.target

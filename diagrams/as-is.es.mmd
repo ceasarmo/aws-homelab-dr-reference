@@ -1,0 +1,8 @@
+flowchart LR
+    nextcloud[Nextcloud] --> local[Conjuntos locales validados]
+    npm[Nginx Proxy Manager] --> local
+    pihole[Pi-hole] --> local
+    plex[Plex y auxiliares] --> local
+    local --> timer[Planificador systemd]
+    timer --> s3[Bucket S3 privado]
+    s3 --> lifecycle[Retención Lifecycle]

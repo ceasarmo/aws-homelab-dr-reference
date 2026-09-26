@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily due check for pihole backups (UTC)
+
+[Timer]
+OnCalendar=*-*-* 03:20:00 UTC
+Persistent=true
+AccuracySec=1min
+Unit=homelab-backup-pihole.service
+
+[Install]
+WantedBy=timers.target
